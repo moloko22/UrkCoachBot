@@ -15,7 +15,7 @@ app.use(
 );
 
 app.get('/', async (req, res) => {
-  res.statusCode(200).send('Ololo');
+  return res.send('ololo');
 });
 
 app.post('/', async (req, res) => {
