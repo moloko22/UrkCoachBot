@@ -15,6 +15,7 @@ app.use(
 );
 
 app.post('/', async (req, res) => {
+  console.log(req, 'req');
   const { message } = req.body;
 
   const messageText = message?.text?.toLowerCase()?.trim();
