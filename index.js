@@ -18,7 +18,7 @@ app.get('/', async (req, res) => {
   return res.send('ololo');
 });
 
-app.post('/', async (req, res) => {
+app.post('/new-message', async (req, res) => {
   console.log(req, 'req');
   const { message } = req.body;
 
