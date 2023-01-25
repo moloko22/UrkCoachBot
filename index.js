@@ -14,6 +14,10 @@ app.use(
   }),
 );
 
+app.get('/', async (req, res) => {
+  res.statusCode(200).send('Ololo');
+});
+
 app.post('/', async (req, res) => {
   console.log(req, 'req');
   const { message } = req.body;
