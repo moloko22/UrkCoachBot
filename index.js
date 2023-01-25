@@ -14,10 +14,6 @@ app.use(
   }),
 );
 
-app.get('/', async (req, res) => {
-  return res.send('ololo');
-});
-
 app.post('/new-message', async (req, res) => {
   console.log(req, 'req');
   const { message } = req.body;
@@ -28,15 +24,7 @@ app.post('/new-message', async (req, res) => {
     return res.sendStatus(400);
   }
 
-  let responseText = 'I have nothing to say.';
-  if (messageText === 'joke') {
-    try {
-      responseText = 'joke';
-    } catch (e) {
-      console.log(e);
-      res.send(e);
-    }
-  }
+  let responseText = messageText || 'I have nothing to say.';
 
   // send response
   try {
